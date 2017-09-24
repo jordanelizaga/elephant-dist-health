@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {% block title %}<title>Product Validation Page</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+</head>
+
+<body >
+    <div class="container">
+        <form method="POST">
+                {% csrf_token %}
+            <input type="submit" name="patient" value="Log In As PATIENT">
+            <input type="submit" name="hc" value="Log In As PHARMACIST">
+        </form>
+
+        {% if user %}
+        <h3> You are logged in as: </h3>
+            <h1> 
+                {{ user }}
+            </h1>
+            {% endif %}
+        <form method="POST">
+                {% csrf_token %}
+            {% if not user %}
+            Please Log In.
+            
+            {% else %}
+                Patient's First Name: <br> <input type="text" name="First Name" > <br> 
+                Patient's Middle Initial: <br> <input type="text" name="Middle Initial" > <br>
+                Patient's Last Name: <br> <input type="text" name="Last Name" >        <br>
+                Transaction ID: <br> <input type="text" name="ID Code" >        <br>
+                
+                {% if user == 'Patient' %} 
+                <input type="submit" name="getPatientRecord" value="Retrieve Profile">
+                {% elif user == 'Pharmacist' %} 
+                <input type="submit" name="getPharmacistRecord" value="12">
+                {% endif %}
+            {% endif %}
+            
+        </form>
+    </div>
+</body>
+</html>

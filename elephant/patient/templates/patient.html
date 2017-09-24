@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {% block title %}<title>Results Page</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+</head>
+
+<body >
+    <div class="container">
+
+        <table class="tg">
+            <tr>
+            <th class="tg-yw4l">Drug Name</th>
+            <th class="tg-yw4l">A</th>
+            </tr>
+            <tr>
+            <td class="tg-yw4l">Strength</td>
+            <td class="tg-yw4l">150mg</td>
+            </tr>
+            <tr>
+            <td class="tg-yw4l">Quantity</td>
+            <td class="tg-yw4l">2 PILLS</td>
+            </tr>
+            <tr>
+            <td class="tg-yw4l">Directions</td>
+            <td class="tg-yw4l">1 PILL/DAY</td>
+            </tr>
+            <tr>
+            <td class="tg-yw4l">Number of Refills</td>
+            <td class="tg-yw4l">1</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
