@@ -10,6 +10,8 @@ Registered practitioners are required to keep records of controlled substances t
 
 ## Using the Django Server Simulation
 
+Clone this folder and change your current working directory to the elephant folder. 
+
 Start your Django virtual environment. 
 
 ```
@@ -17,3 +19,5 @@ python manage.py runserver
 ```
 
 Open your favorite browser and type http://localhost:8000 or http://127.0.0.1:8000 (Django manage.py default settings). 
+
+Use the application! 
