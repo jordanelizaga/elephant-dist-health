@@ -16,8 +16,8 @@
     <div class="container">
         <form method="POST">
                 {% csrf_token %}
-            <input type="submit" name="patient" value="Log In As PATIENT">
-            <input type="submit" name="hc" value="Log In As PHARMACIST">
+            <input class="btn-hover" type="submit" name="patient" value="Log In As PATIENT">
+            <input class="btn-hover" type="submit" name="hc" value="Log In As PHARMACIST">
         </form>
 
         {% if user %}
@@ -32,15 +32,28 @@
             Please Log In.
             
             {% else %}
-                Patient's First Name: <br> <input type="text" name="First Name" > <br> 
-                Patient's Middle Initial: <br> <input type="text" name="Middle Initial" > <br>
-                Patient's Last Name: <br> <input type="text" name="Last Name" >        <br>
-                Transaction ID: <br> <input type="text" name="ID Code" >        <br>
                 
                 {% if user == 'Patient' %} 
-                <input type="submit" name="getPatientRecord" value="Retrieve Profile">
+                Patient's First Name: <br> <input type="text" name="First Name" value="Bob Smith" > <br> 
+                Patient's Middle Initial: <br> <input type="text" name="Middle Initial" value="D."> <br>
+                Patient's Last Name: <br> <input type="text" name="Last Name" value="Smith">        <br>
+                Address: <br> <input type="text" name="" value="4800 Calhoun Houston, Texas 77004" >        <br>
+                Phone Number: <br> <input type="tel" name="" value="(436) 555-1957" >        <br>
+                E-Mail: <br> <input type="email" name="" value="bob123@example.com" >        <br>
+                Insurance Provider: <br> <input type="text" name="" value="Blue Cross Blue Shield" >        <br>
+                Ethereum Address: <br> <select name="" ><option value="">0x43ac6d09283e6b126ba21c2a1f801853bfc06f15</option>   </select>    <br>                
+                <input class='btn-hover' type="submit" name="getPatientRecord" value="Retrieve My Record">
                 {% elif user == 'Pharmacist' %} 
-                <input type="submit" name="getPharmacistRecord" value="12">
+                Drug name: <br> <input type="text" name="First Name" value="Synthroid" > <br> 
+                Strength: <br> <input type="text" name="First Name" value="25 mcg" > <br> 
+                Quantity prescribed: <br> <input type="text" name="Middle Initial" value="Twice A Day"> <br>
+                Directions for use: <br> <input type="text" name="Last Name" value="Ingest orally.">        <br>
+                Number of Refills: <br> <input type="text" name="" value="One Refill" >        <br>
+                Price ($): <br> <input type="text" name="" value="95" >        <br>
+                Ethereum Address: <br> <select name="" ><option value="0x7a592b9242458ef7ed757a9c255fe43ce5be9977">0x7a592b9242458ef7ed757a9c255fe43ce5be9977</option>   </select>     <br>                
+                <input class="btn-hover" type="submit" name="getPharmacistRecord" value="Update Patient Records">
+                {# {% elif user == 'Specialist' %} #}
+                <!-- <input type="submit" name="getPharmacistRecord" value="Read Patient Profile"> -->
                 {% endif %}
             {% endif %}
             

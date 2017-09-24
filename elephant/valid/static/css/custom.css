@@ -1,7 +1,12 @@
 body { 
-    background-color: lightsteelblue;
+    background-color: #f1f1f1;
 }
 
 form {
     margin: 0 auto;
+}
+
+.btn-hover:hover { 
+    background-color: #666666 !important;
+    
 }
