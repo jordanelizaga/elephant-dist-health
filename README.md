@@ -16,4 +16,4 @@ Start your Django virtual environment.
 python manage.py runserver
 ```
 
-Open your favorite browser and type http://localhost:8000 (Django manage.py default settings). 
+Open your favorite browser and type http://localhost:8000 or http://127.0.0.1:8000 (Django manage.py default settings). 
